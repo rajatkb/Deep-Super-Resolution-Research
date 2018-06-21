@@ -17,4 +17,8 @@ And the official caffe installation page
     rest all happy and done also make sure to have ur input blobs in size of the image
 7.  net.save('mymodel.caffemodel') to save the model
 8.  Rest is in code the solver included is an Adam solver there is more available out in the wild
-    https://github.com/BVLC/caffe/wiki/Solver-Prototxt usefull link for solvertext
+    https://github.com/BVLC/caffe/wiki/Solver-Prototxt usefull link for solvertext  
+
+9.  And read this the caffe-tools it will save your damn life https://github.com/davidstutz/caffe-tools  
+    in case you have issues with LMDB like i have. Also caffe can work with formats. It is just slow  
+    and this is the defacto
