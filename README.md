@@ -1,2 +1,2 @@
-# Adversarial-Attack-on-Deep-Super-Resolution
+# Deep-Super-Resolution-Research
 Personal intern project
