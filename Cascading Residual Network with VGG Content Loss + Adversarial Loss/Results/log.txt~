@@ -1,0 +1,2 @@
+* Stopped at 42 with only pix loss for normalised data
+* starting with content loss + adv loss with 0.006 and 0.001

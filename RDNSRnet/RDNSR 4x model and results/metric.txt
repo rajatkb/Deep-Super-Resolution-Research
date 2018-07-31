@@ -1,0 +1,4 @@
+train set : Reconstruction gain : 27.4444114222
+Set5:
+	baby.png: Reconstruction Gain: 34.0288308475 / Quality is bad for woollen cap missing no texture , quality is bad for
+	eyes smudged out also no eye lash. 

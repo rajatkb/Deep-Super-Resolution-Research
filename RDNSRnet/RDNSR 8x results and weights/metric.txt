@@ -1,0 +1,1 @@
+reconstrcution gain in training : 24.3917770889407

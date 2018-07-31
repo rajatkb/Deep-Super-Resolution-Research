@@ -1,0 +1,55 @@
+log1: 7:36 4 July : for image 0016.jpg the reconstruction has issue with finer details with artifacts like water drops.
+                    also there is incoherence between some patches only noticable with high zoom levels. There are no
+                    lines but you can see a discontinuity in between the patches.
+log2: 13:19 6 July: 4x and 2x gives fine results. Though in some images where the color is uniform but there is change
+                    in texture . e.g grass or green in see bed etc. Anything with uniform colour but changing texture looses
+                    its texture details.
+
+NEW MODEL
+log3: 18:02 7 July: I have added content loss to the architecture. the layer relu3_3 or block3_con3 in Keras is used to generate
+		    Content loss. the VGG model is first compiled  up till the required layer. The output from these layers are than taken 
+		    and then computed the loss which is not part of the loss function but as a compute graph. We compare the output to
+		    0 and compute a mse loss hence having the loss backpropagate.
+		    So we are now using pretrained weights of the 4x zoom model to accelerate training.
+
+log4: 2:45 8 July: RDNSR + Perceptual loss , it is very hard to controll the loss function The general loss function is kept as
+			
+			loss = l1_factor*(l1_loss) + lambda_content*( Content_loss ) where Content_loss = square(frobeneus-norm(vgg_relu3_3(ypred) - vgg_relu3_3(ytrue)))
+			Maybe adding texture loss would affect the training
+
+			Excerpt from paper Perceptual Loss
+
+			"For  all  style  transfer  experiments  we  compute feature  reconstruction  loss  at  layer relu2_2 and  style  reconstruction  loss  at
+			layers relu1_2, relu2_2,relu3_3, and relu4_3 of the VGG-16 loss network"
+
+log5: 4:06 8 July: 	Content Loss + RDNSR is not yielding any usefull result , what apperas now is RDNSR is probably lacking texture, So maybe
+			having texture loss may solve some  issue.
+
+log6: 14:25 9 july: Image no 78 of the RDN + Pereceptual Loss giving better results on the image 0016.png dog face fur are better.
+                    there is visible fur. But in furthur training it is going away.
+		    So remember this result came by
+                    epoch 0 : weights pretrained RDN
+		    epoch 50: weights trained with l1 1 loss and content loss 0 style loss 0
+                    epoch 78: l1_factor 0.1 --lambda_content 0.00001 --lambda_style 0.0000000001 factor values with weights of epoch 50 as seed
+
+		    According to the paper of perceptual loss the batch size were reallly small and learning rate high. In the RDN high learning rate
+                    Seems to work poorly so we resort to low batch size but also low Learning rate 
+
+log7: 15:11 9 July: any sort of per pixel loss will ensure there is no gridding when reconstructing from the patches
+
+log8: same day: uunable to push forward with the results of 78
+
+log9: same day:	epoch 78 onwards style loss is increased by factor of 10 . Bad results, 
+
+log10: same day: Rduces both style and content by factor of 10 and looking at its effect.Not working
+
+log11: same day: at 78th epoch the image seems better. Any furthur training is making it worse.
+
+log12: 22:27: with the config of --l1_factor 1 --lambda_content 1e9 --lambda_style 1e4
+              There was no significant improvement whatsoever. After training for many epochs. Variation of Batch size ranging from
+              4 - 16. The final results just looks more crisp. Otherwise an Adversarial Loss is what remains to be tried.
+              Perceptually the High Res images looks great. And Also we need to consider that if the lowe res images
+              does not contain the high frequency information there is no way we can simply recreate them. Though an
+              Adversarial System may be able to create better loss for generating better images.
+
+

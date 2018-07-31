@@ -1,0 +1,3 @@
+Reconstruction gain: 43.3376462565 for image 16191766_1.jpg
+Reconstruction Gain: 34.716204413 for image 118554337_1.jpg
+

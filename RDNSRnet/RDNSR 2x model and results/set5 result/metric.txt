@@ -1,0 +1,2 @@
+butterfly.png : Reconstruction Gain: 36.5083705438
+ 

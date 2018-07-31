@@ -1,0 +1,5 @@
+* Stopped at 42 with only pix loss for normalised data
+* starting with content loss + adv loss with 0.006 and 0.001
+* The GAN is simply collapsing again and again cant control the mod collapse
+  Cant figure out why, i am looking back into the API again if by mistake
+  the discriminator if is getting trained can be an issue

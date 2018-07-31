@@ -1,0 +1,13 @@
+log1: 7:36 4 July : for image 0016.jpg the reconstruction has issue with finer details with artifacts like water drops.
+                    also there is incoherence between some patches only noticable with high zoom levels. There are no
+                    lines but you can see a discontinuity in between the patches.
+log2: 13:19 6 July: 4x and 2x gives fine results. Though in some images where the color is uniform but there is change
+                    in texture . e.g grass or green in see bed etc. Anything with uniform colour but changing texture looses
+                    its texture details.
+
+NEW MODEL
+log3: 18:02 7 July: I have added content loss to the architecture. the layer relu3_3 or block3_con3 in Keras is used to generate
+		    Content loss. the VGG model is first compiled  up till the required layer. The output from these layers are than taken 
+		    and then computed the loss which is not part of the loss function but as a compute graph. We compare the output to
+		    0 and compute a mse loss hence having the loss backpropagate.
+		    So we are now using pretrained weights of the 4x zoom model to accelerate training.

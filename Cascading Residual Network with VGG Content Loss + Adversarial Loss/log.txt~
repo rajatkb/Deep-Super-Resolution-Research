@@ -1,0 +1,7 @@
+1 . We train with python main.py --ep 1 --to 50 --lr 1e-6 --bs 36 --data ../Data --content 0 --pix 1 --adv 0 --test_image 0008.png
+    This config will train the RDNnet first. Then we will move to training with only content and the adversarial loss
+	till 24 epochs disabled 4x nd 8x
+
+2. Nothing worked image results are not great the generator is not able to reach accuracy
+
+3. Normalising the data and trying again

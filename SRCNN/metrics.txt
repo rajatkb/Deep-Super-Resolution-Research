@@ -1,0 +1,1 @@
+Super Epoch (tryout):0 loss:39.5059306992 PSNRLoss:74.1975920172 SSIM loss: 0.999895523031 PSNR for reconstruction: 32.9599754499 

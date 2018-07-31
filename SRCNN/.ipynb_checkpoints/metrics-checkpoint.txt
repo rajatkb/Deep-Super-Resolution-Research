@@ -1,0 +1,1 @@
+Super Epoch (tryout):0 loss:836.866416658 PSNRLoss:56.5188035395

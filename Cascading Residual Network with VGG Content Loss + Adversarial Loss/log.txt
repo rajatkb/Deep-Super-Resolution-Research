@@ -1,0 +1,20 @@
+1 . We train with python main.py --ep 1 --to 50 --lr 1e-6 --bs 36 --data ../Data --content 0 --pix 1 --adv 0 --test_image 0008.png
+    This config will train the RDNnet first. Then we will move to training with only content and the adversarial loss
+	till 24 epochs disabled 4x nd 8x
+
+2. Nothing worked image results are not great the generator is not able to reach accuracy
+
+3. Normalising the data and trying again
+
+4. Not working so made the patch size smaller i.e input patch size is now 16x16.
+   Giving better results
+5. one more important observation deapth affects edge quality in the RDNSR method
+
+6. 
+
+
+
+
+kam ka saman
+
+Classical Methods was going as far possible with fixed kernel , using fourier's of images etc. methods to tackle the problem of SISR with not so great results. Then Dong et al[1]. first introduced the idea of using CNN for the purpose of Image Super Resolution in 2014 which improved the results and was a big leap in the domain  compared to its prior methods. This brought the problem field of SISR under the light of Deep Learning. After this, several other deep learning based SISR were showcased with improvements to the original network or better techniques. Some of the most prominent work and improvement in the field is shown by VDSR[3] , Perceptual Loss for Style Transfer and Super Resolution[2] and SRGAN[4] . Even with the introduction of all new losses and and deeper networks with new methods of learning the super resolution problem  yet remains an open research question and target for improvisation.

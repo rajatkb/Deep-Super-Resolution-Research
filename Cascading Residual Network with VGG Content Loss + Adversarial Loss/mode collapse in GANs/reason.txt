@@ -1,0 +1,8 @@
+Also the reason why training GAN especially in this domain is even much harder given
+the generator is completely oblivious to input and instead of improving on it is 
+constantly trying to minimize discriminator losses. The results of 42 is pure pixel based
+the 52 one is content+adversarial with content as a regularizer
+
+We can try a GAN as a regularizer. A regularizer actually decreases the loss factor
+So we can mitigate the patches having green borders. Also we are following SRGAN
+And going with two layers of the final 4 and 5 layers in VGG16
